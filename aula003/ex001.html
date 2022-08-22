@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            background-color: lightcoral;
+            width: 250px;
+            height: 250px;
+            text-align: center;
+            line-height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseover="entrar()" onmouseout="sair()"> <!--Quando clicar nessa div, um objeto (var area) vai ser criado e ele será uma ligação com essa div, e o objeto mudará seu conteúdo-->
+        Olá!
+    </div>
+
+    <script>
+        var area = window.document.getElementById('area') // criação do objeto que será ligado com a div de id="area"
+
+        /*
+        disparar os eventos usando listeners em vez de colocar diretamente no html:
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseover', entrar)
+        area.addEventListener('mouseout', sair)
+        */
+        function clicar() {
+            area.innerText = 'Clicou' // alterando o conteúdo da div para 'Clicou'
+            area.style.background = 'lightgreen'
+        }
+
+        function entrar() {
+            area.innerText = 'Mouse entrou na área'
+            area.style.color = 'white'
+        }
+
+        function sair() {
+            area.innerText = 'Mouse saiu da área'
+            area.style.background = 'lightcoral'
+            area.style.color = 'black'
+
+        }
+    </script>
+</body>
+</html>

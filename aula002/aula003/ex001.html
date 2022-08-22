@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciando DOM</title>
+    <style>
+        body {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM</h1>
+    <p>Primeiro parágrafo</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JS</p>
+    <div id="msg">Clique aqui</div>
+
+    <script>
+        var parag1 = window.document.getElementsByTagName('p')[0] // armazena o valor do primeiro parágrafo do documento (índice 0) na variável parag1
+        window.document.write('No primeiro parágrafo está escrito: ' + parag1.innerText) // escreve na tela o texto que está dentro do primeiro parágrafo
+        parag1.style.color = 'blue' // mudar a cor do parágrafo para azul
+
+        var corpo = window.document.body
+        corpo.style.background = 'lightblue'
+
+        var div = window.document.getElementById('msg') // selecionando a div pelo id para a variável div
+        div.style.background = 'purple'
+
+
+        
+        
+    </script>
+</body>
+</html>

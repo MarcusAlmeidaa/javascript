@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txt1" id="txt1"> +
+    <input type="number" name="txt2" id="txt2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">Resultado: </div>
+
+    <script>
+        function somar() {
+            var res = window.document.getElementById('res')
+            var txt1 = window.document.getElementById('txt1') // os dados são lidos como string, por isso txt1
+            var txt2 = window.document.querySelector('input#txt2') //outra forma de selecionar o elemento (querySelector)
+            var num1 = Number(txt1.value) // pegar o valor de txt e converter para number (int ou float)
+            var num2 = Number(txt2.value)
+            var soma = num1 + num2
+            res.innerHTML = `A soma entre ${num1} e ${num2} é igual a <strong>${soma}</strong>`
+        }
+    </script>
+</body>
+</html>

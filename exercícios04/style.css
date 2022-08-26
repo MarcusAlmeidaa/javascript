@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: rgba(151, 201, 53, 0.849);
+    background-color: rgb(122, 184, 209);
 }
 
 header {
@@ -29,14 +29,11 @@ section {
 
 div {
     text-align: left;
+    margin-bottom: 25px;
 }
 
 div#msg {
     padding-top: 10px;
-}
-
-p {
-    margin-bottom: 20px;
 }
 
 footer {

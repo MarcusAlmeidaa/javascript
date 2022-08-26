@@ -1,70 +1,35 @@
 function contar() {
-    var ini = document.getElementById('textInic')
+    var ini = document.getElementById('txti')
     var iniNum = Number(ini.value)
 
-    var fim = document.getElementById('txtFim')
+    var fim = document.getElementById('txtf')
     var fimNum = Number(fim.value)
 
-    var passo = document.getElementById('txtPasso')
+    var passo = document.getElementById('txtp')
     var passoNum = Number(passo.value)
 
     var res = document.getElementById('res')
 
     if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
-        alert('Preencha os campos!')
+        res.innerHTML = 'Preencha todos os campos!'
     } else {
-        if (iniNum < fimNum) {
-            while (iniNum <= fimNum) {
-                iniNum += passoNum
-            }
+        res.innerHTML = 'Contando: <br>'
 
-        } else if (iniNum > fimNum) {
-            while (iniNum >= fimNum) {
-                iniNum -= passoNum
-            }
-
-        } else {
-            res.innerText = 'O número inicial é igual ao número final!'
+        if (passoNum == 0) {
+            res.innerText = 'Passo inválido! Considerando passo = 1'
+            passoNum = 1
         }
 
-    }
+        if (iniNum < fimNum) {
+            for (let cont = iniNum; iniNum <= fimNum; cont += passoNum){
+                res.innerHTML += `${cont} `
+            }
+        } else {
+            for (let cont = iniNum; iniNum >= fimNum; cont -= passoNum ){
+                res.innerHTML += `${cont} `
+            }
+        }
 
-    // if (iniNum < fimNum) {
-    //     while (iniNum <= fimNum) {
-    //         res.innerText = iniNum
-    //         iniNum += passoNum   
-    //     }
-
-    // } else if (iniNum > fimNum){
-    //     while (iniNum >= fimNum) {
-    //         res.innerText = iniNum
-    //         iniNum -= passoNum 
-    //     }
-
-    // } else {
-    //     res.innerText = 'O número inicial é igual ao número final!'
-    // }
-
-    //if(ini.length == 0 || fim.length == 0 ) {
-    //     alert('Valor faltando!')
-    // }
-
-    // if(passoNum == 0 || passoNum.length == 0) {
-    //     passoNum = 1
-    //     if (iniNum < fimNum) {
-    //         while (iniNum <= fimNum) {
-    //             alert(iniNum)
-    //             iniNum += passoNum 
-    //         }
-
-    //     } else if (iniNum > fimNum){
-    //         while (iniNum >= fimNum) {
-    //             alert(iniNum)
-    //             iniNum -= passoNum
-    //         }
-
-    //     } else {
-    //         alert('O número inicial é igual ao número final!')
-    //     }
-    // }     
-}
+        }
+ }
+          
